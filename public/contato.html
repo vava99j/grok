@@ -1,70 +1,294 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="pt-BR">
 <head>
-<meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="Mobirise v6.0.1, mobirise.com" name="generator"/>
-<meta content="width=device-width, initial-scale=1, minimum-scale=1" name="viewport"/>
-<link href="assets/images/47b3204c-f074-4262-87dc-d95bf20c03d6-removebg-preview-1.png" rel="shortcut icon" type="image/x-icon"/>
-<meta content="" name="description"/>
-<title>contato</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contato | Tec-Hor</title>
 
+  <link rel="shortcut icon" href="assets/images/47b3204c-f074-4262-87dc-d95bf20c03d6-removebg-preview-1.png" type="image/x-icon" />
 
+  <!-- Fontes Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<link href="assets/dropdown/css/style.css" rel="stylesheet"/>
+    body {
+      font-family: "Golos Text", sans-serif;
+      background-color: #f9f9f4;
+      color: #333;
+      line-height: 1.6;
+    }
 
-<link as="style" href="https://fonts.googleapis.com/css?family=Dela+Gothic+One:400&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
-<noscript><link href="https://fonts.googleapis.com/css?family=Dela+Gothic+One:400&amp;display=swap" rel="stylesheet"/></noscript>
-<link as="style" href="https://fonts.googleapis.com/css?family=Golos+Text:400,500,600,700,800,900&amp;display=swap" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
-<noscript><link href="https://fonts.googleapis.com/css?family=Golos+Text:400,500,600,700,800,900&amp;display=swap" rel="stylesheet"/></noscript>
-<link as="style" href="assets/mobirise/css/mbr-additional.css?v=zVWXHH" rel="preload"/>
+    /* ===== MENU ===== */
+    nav {
+      background-color: #2b7a0b;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
 
-<link href="style.css" rel="stylesheet"/></head>
+    nav img {
+      height: 4.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-left: 1.5rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #d4f8d4;
+    }
+
+    .btn-light {
+      background-color: #fff;
+      color: #2b7a0b;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-light:hover {
+      background-color: #c6f5c3;
+    }
+
+    /* ===== SEÇÃO DE CONTATO ===== */
+    section {
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+    }
+
+    section h1 {
+      font-family: "Dela Gothic One", cursive;
+      color: #2b7a0b;
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      color: #555;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      font-size: 1.1rem;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    .btn-success {
+      background-color: #2b7a0b;
+      color: #fff;
+    }
+
+    .btn-success:hover {
+      background-color: #226507;
+    }
+
+    .btn-outline-success {
+      border: 2px solid #2b7a0b;
+      color: #2b7a0b;
+    }
+
+    .btn-outline-success:hover {
+      background-color: #2b7a0b;
+      color: #fff;
+    }
+
+    /* ===== FORMULÁRIO ===== */
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: left;
+    }
+
+    form label {
+      display: block;
+      font-weight: 600;
+      color: #2b7a0b;
+      margin-bottom: 0.5rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 2px solid #cce8cc;
+      border-radius: 10px;
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    form input:focus, form textarea:focus {
+      border-color: #2b7a0b;
+    }
+
+    form button {
+      display: block;
+      width: 100%;
+      background-color: #2b7a0b;
+      color: white;
+      padding: 0.9rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    form button:hover {
+      background-color: #226507;
+    }
+
+    /* ===== RESPONSIVIDADE ===== */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      section {
+        padding-top: 10rem;
+      }
+    }
+  </style> */
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
-<section class="menu menu3 cid-tHeG7yune1" data-bs-version="5.1" id="menu03-2" once="menu">
-<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
-<div class="container">
-<div class="navbar-brand">
-<span class="navbar-logo">
-<a href="#">
-<img alt="Logo" src="assets/images/47b3204c-f074-4262-87dc-d95bf20c03d6-removebg-preview-1.png" style="height: 5rem;"/>
-</a>
-</span>
-</div>
-<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
-<div class="hamburger">
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-</div>
-</button>
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
-<ul class="navbar-nav nav-dropdown" data-app-modern-menu="true"><li class="nav-item">
-<a aria-expanded="false" class="nav-link link show text-info text-primary display-4" href="index.html">Home<strong></strong></a>
-</li><li class="nav-item">
-<a class="nav-link link text-info text-primary display-4" href="sobre.html">Sobre Nós<strong></strong></a>
-</li>
-<li class="nav-item">
-<a class="nav-link link text-info text-primary display-4" href="infos.html">Infos Técnicas<strong></strong></a>
-</li></ul>
-<div class="navbar-buttons mbr-section-btn"><a class="btn btn-info display-4" href="contato.html">Contacte-nos</a></div>
-</div>
-</div>
-</nav>
-</section>
-<section class="form5 cid-uHEnUcprqD" data-bs-version="5.1" id="form02-t">
-<br/><br/><br/>
-<div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn teste">
-<button class="btn btn-info display-7" type="submit"><a class="btn btn-info display-7" href="mailto:svagnerjorge2@gmail.com"> Enviar via Email </a> </button>
-</div>
-<br/><br/><br/>
-<div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn teste">
-<button class="btn btn-info display-7" type="submit"><a class="btn btn-info display-7" href="whatsapp://send?phone=+5511978315772&amp;text=Olá, gostaria de entrar em contato sobre o Tec-Hor."> Enviar via Whatsapp </a> </button>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+
+   <nav class="navbar">
+    <a href="/home">
+      <img src="img/icon.png" alt="Logo">
+    </a>
+    <ul>
+      <li><a href="/home">Home</a></li>
+      <li><a href="/sobre">Sobre Nós</a></li>
+      <li><a href="/infos">Infos Técnicas</a></li>
+    </ul>
+    <div class="buttons">
+      <button id="modeToggle">🌙</button>
+      <a href="/contato" class="btn">Contacte-nos</a>
+    </div>
+  </nav>
+
+  
+  <section>
+    <h1>Entre em Contato 💬</h1>
+    <p>Escolha como deseja falar conosco ou envie uma mensagem diretamente:</p>
+
+    <div class="botoes">
+      <a class="btn btn-outline-success m-2" href="mailto:svagnerjorge2@gmail.com">📧 Enviar Email</a>
+      <a class="btn btn-outline-success m-2" href="https://wa.me/5511978315772?text=Olá! Gostaria de saber mais sobre o Tec-Hor.">💬 Enviar WhatsApp</a>
+    </div>
+
+ 
+    <form action="https://formspree.io/f/xwpeyyly" method="POST">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" name="_replyto" placeholder="Seu e-mail para contato" required>
+
+      <label for="mensagem">Mensagem ou problema:</label>
+      <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite aqui sua mensagem..." required></textarea>
+
+      <button type="submit">Enviar Mensagem 💌</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Tec-Hor | Todos os direitos reservados 💚</p>
+  </footer>
+  <script>// Instale antes: npm install express mysql body-parser cors
+
+    const toggleBtn = document.getElementById("modeToggle");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark-mode");
+      body.classList.toggle("light-mode");
+      toggleBtn.textContent = body.classList.contains("dark-mode") ? "🌞" : "🌙";
+    });
+  
+const express = require('express');
+const mysql = require('mysql');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+
+// Conexão MySQL
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'techor_db'
+});
+
+db.connect(err => {
+  if (err) throw err;
+  console.log('✅ Conectado ao MySQL!');
+});
+
+// Rota para receber o formulário
+app.post('/enviar', (req, res) => {
+  const { nome, email, mensagem } = req.body;
+  const sql = 'INSERT INTO contatos (nome, email, mensagem) VALUES (?, ?, ?)';
+  db.query(sql, [nome, email, mensagem], (err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Erro ao salvar mensagem 😢');
+    } else {
+      res.send('Mensagem enviada com sucesso 💚');
+    }
+  });
+});
+
+app.listen(3000, () => console.log('🚀 Servidor rodando em http://localhost:3000'));
 </script>
-</section></body>
+</body>
 </html>

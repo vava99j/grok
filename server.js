@@ -16,8 +16,16 @@ app.get("/sobre", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "sobre.html"));
 });
 
-app.get("/inf", (req, res) => {
+app.get("/infos", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "infos.html"));
+});
+
+app.get("/contato", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "contato.html"));
+});
+
+app.get("/home", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(PORT, () => {
