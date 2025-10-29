@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contato | Tec-Hor</title>
 
-  <link rel="shortcut icon" href="assets/images/47b3204c-f074-4262-87dc-d95bf20c03d6-removebg-preview-1.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="assets/images/47b3204c-f074-4262-87dc-d95bf20c03d6-removebg-preview-1.png"
+    type="image/x-icon" />
 
   <!-- Fontes Google -->
-  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Golos+Text:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
 
   <style>
     * {
@@ -144,7 +148,8 @@
       margin-bottom: 0.5rem;
     }
 
-    form input, form textarea {
+    form input,
+    form textarea {
       width: 100%;
       padding: 0.8rem;
       border: 2px solid #cce8cc;
@@ -155,7 +160,8 @@
       transition: border-color 0.3s;
     }
 
-    form input:focus, form textarea:focus {
+    form input:focus,
+    form textarea:focus {
       border-color: #2b7a0b;
     }
 
@@ -198,7 +204,7 @@
 
 <body>
 
-   <nav class="navbar">
+  <nav class="navbar">
     <a href="/home">
       <img src="img/icon.png" alt="Logo">
     </a>
@@ -213,35 +219,53 @@
     </div>
   </nav>
 
-  
+
   <section>
     <h1>Entre em Contato 💬</h1>
     <p>Escolha como deseja falar conosco ou envie uma mensagem diretamente:</p>
 
     <div class="botoes">
       <a class="btn btn-outline-success m-2" href="mailto:svagnerjorge2@gmail.com">📧 Enviar Email</a>
-      <a class="btn btn-outline-success m-2" href="https://wa.me/5511978315772?text=Olá! Gostaria de saber mais sobre o Tec-Hor.">💬 Enviar WhatsApp</a>
+      <a class="btn btn-outline-success m-2"
+        href="https://wa.me/5511978315772?text=Olá! Gostaria de saber mais sobre o Tec-Hor.">💬 Enviar WhatsApp</a>
     </div>
 
- 
-    <form action="https://formspree.io/f/xwpeyyly" method="POST">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
 
-      <label for="email">E-mail:</label>
-      <input type="email" id="email" name="_replyto" placeholder="Seu e-mail para contato" required>
+  <form id="contatoForm">
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" required>
 
-      <label for="mensagem">Mensagem ou problema:</label>
-      <textarea id="mensagem" name="mensagem" rows="5" placeholder="Digite aqui sua mensagem..." required></textarea>
+  <label for="email">E-mail:</label>
+  <input type="email" id="email" required>
 
-      <button type="submit">Enviar Mensagem 💌</button>
-    </form>
-  </section>
+  <label for="mensagem">Mensagem:</label>
+  <textarea id="mensagem" required></textarea>
 
-  <footer>
-    <p>© 2025 Tec-Hor | Todos os direitos reservados 💚</p>
-  </footer>
-  <script>// Instale antes: npm install express mysql body-parser cors
+  <button type="submit">Enviar Mensagem 💌</button>
+</form>
+
+<script>
+document.getElementById("contatoForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const nome = document.getElementById("nome").value;
+  const email = document.getElementById("email").value;
+  const mensagem = document.getElementById("mensagem").value;
+
+  try {
+    const resposta = await fetch("http://localhost:8000/enviar", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nome, email, mensagem })
+    });
+
+    const texto = await resposta.text();
+    alert(texto);
+  } catch (err) {
+    alert("Erro ao enviar mensagem 😢");
+    console.error(err);
+  }
+});
 
     const toggleBtn = document.getElementById("modeToggle");
     const body = document.body;
@@ -251,44 +275,8 @@
       body.classList.toggle("light-mode");
       toggleBtn.textContent = body.classList.contains("dark-mode") ? "🌞" : "🌙";
     });
-  
-const express = require('express');
-const mysql = require('mysql');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+  </script>
 
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
-
-// Conexão MySQL
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'techor_db'
-});
-
-db.connect(err => {
-  if (err) throw err;
-  console.log('✅ Conectado ao MySQL!');
-});
-
-// Rota para receber o formulário
-app.post('/enviar', (req, res) => {
-  const { nome, email, mensagem } = req.body;
-  const sql = 'INSERT INTO contatos (nome, email, mensagem) VALUES (?, ?, ?)';
-  db.query(sql, [nome, email, mensagem], (err) => {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Erro ao salvar mensagem 😢');
-    } else {
-      res.send('Mensagem enviada com sucesso 💚');
-    }
-  });
-});
-
-app.listen(3000, () => console.log('🚀 Servidor rodando em http://localhost:3000'));
-</script>
 </body>
+
 </html>
