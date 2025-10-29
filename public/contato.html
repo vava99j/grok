@@ -253,7 +253,7 @@ document.getElementById("contatoForm").addEventListener("submit", async (e) => {
   const mensagem = document.getElementById("mensagem").value;
 
   try {
-    const resposta = await fetch("http://localhost:8000/enviar", {
+    const resposta = await fetch("/enviar", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nome, email, mensagem })
