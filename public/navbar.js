@@ -1,15 +1,16 @@
 const template = document.createElement('template');
 template.innerHTML = `
 <head>
-
   <link rel="stylesheet" href="style.css">
 </head>
     
 
   <div class="navbar">
+  <div id='navbarrow'>
     <a href="/home" class="logo"><img src="img/icon.png" alt="Logo"></a>
-
-    <ul id="menu" hidden>
+    <button class="menu-btn">☰</button>
+      </div>
+    <ul id="menu">
       <li><a href="/home">Home</a></li>
       <li><a href="/sobre">Sobre Nós</a></li>
       <li><a href="/infos">Infos Técnicas</a></li>
@@ -21,16 +22,13 @@ template.innerHTML = `
     </div>
       </ul>
 
-    <button class="menu-btn">☰</button>
   </div>
 `;
 
-class MeuWidget extends HTMLElement {
+class Navbar extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true));
-
-    // Adiciona eventos dentro do shadow DOM
     const toggleBtn = this.shadowRoot.getElementById("modeToggle");
     const menuBtn = this.shadowRoot.querySelector(".menu-btn");
     const menu = this.shadowRoot.getElementById("menu");
@@ -42,9 +40,9 @@ class MeuWidget extends HTMLElement {
     });
 
     menuBtn.addEventListener("click", () => {
-      menu.hidden = !menu.hidden;
+  menu.classList.toggle("ativo");
     });
   }
 }
 
-customElements.define('meu-widget', MeuWidget);
+customElements.define('nav-bar', Navbar);

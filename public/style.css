@@ -1,19 +1,17 @@
 @media (max-width: 768px) {
-  .navbar {
-    display: flex;
-    flex-direction: row; /* fica em linha */
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap; /* permite quebra se faltar espaço */
+  .menu-btn {
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
-  .navbar ul {
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-    justify-content: center;
+  .logo img {
+    height: 50px;
   }
 }
+
+
 
 
 
@@ -32,55 +30,85 @@
   font-family: "Poppins", sans-serif;
 }
 
-body.light-mode {
-  background-color: var(--fundo-claro);
-  color: var(--texto-escuro);
-  transition: 0.4s;
-  flex-flow: wrap;
+.light-mode {
+  --fundo: white;
+  --texto: grey;
+ --navbar: rgb(228, 228, 228);
 }
 
+.dark-mode {
+  --fundo: rgb(0, 0, 0);
+  --texto: white;
+  --navbar: rgb(228, 228, 228);
+}
+
+body.light-mode,
 body.dark-mode {
-  background-color: var(--fundo-escuro);
-  color: var(--texto-claro);
+  background-color: var(--fundo);
+  color: var(--texto);
   transition: 0.4s;
-  flex-flow: wrap;
+  display: block;
+  /* ou flex se realmente precisar, mas cuidado */
+  max-width: 100%;
+  /* garante que não extrapole a tela */
+  margin: 0 auto;
+  /* centraliza */
+  text-align: center;
 }
 
-/* NAVBAR */
-/* NAVBAR - sempre em linha */
+.wrapper {
+  max-width: 1200px;
+  /* largura máxima do conteúdo */
+  margin: 0 auto;
+  padding: 0 15px;
+  /* margem interna para mobile */
+}
+
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;                /* essencial */
-  justify-content: space-around; /* espaça logo / menu / buttons */
-  align-items: center;          /* centraliza verticalmente */
-  gap: 15px;
-  padding: 10px 20px;
-  background-color: white;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 10;
-}
-
-/* menu escondido respeitado */
-.navbar ul[hidden] { display: none !important; }
-
-/* menu (links) em linha */
-.navbar ul {
-  list-style: none;
   display: flex;
-  gap: 16px;
-  margin: 0;
-  padding: 0;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(245, 245, 245 , 0.2);
 }
 
-/* botões em linha */
+#navbarrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: '10%';
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.7s ease, opacity 0.3s ease;
+}
+
+.navbar ul.ativo {
+  max-height: 800px;
+  opacity: 1;
+  padding: 24px;
+  width: 100%;
+  background: linear-gradient(
+      to top,          
+       rgba(245, 245, 245 , 0.9) 10%,     
+       rgba(245, 245, 245 , 0.5) 100%       
+    );
+}
+
+
 .navbar .buttons {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: var(--texto);
 }
 
 
@@ -88,32 +116,27 @@ body.dark-mode {
 .menu-btn {
   background: none;
   border: none;
-  color: var(--texto-escuro);
   font-size: 24px;
   cursor: pointer;
+  color: var(--texto);
 }
 
 .menu-btn {
   background: none;
   border: none;
-  color: var(--texto-escuro);
   font-size: 24px;
   cursor: pointer;
 }
 
 .navbar img {
   height: 60px;
+  filter: brightness(200%)  contrast(100%);
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 20px;
-}
-.navbar ul[hidden] {
-  display: none !important;
-  gap: 20px;
-  list-style: none;
 }
 
 .navbar ul li a {
@@ -159,7 +182,6 @@ body.dark-mode {
 /* CABEÇALHO */
 header {
   text-align: center;
-  padding-top: 130px;
 }
 
 header h1 {
@@ -169,13 +191,17 @@ header h1 {
 }
 
 header p {
-  color: #666;
+
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
 header img {
   max-width: 80%;
+  display: block;
+  /* Garante que se comporta como um bloco para margin auto */
+  margin: 0 auto;
+  /* Centraliza o bloco */
   border-radius: 20px;
   border: 4px solid var(--verde);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -225,9 +251,7 @@ section h2 {
   margin-bottom: 10px;
 }
 
-.card p {
-  color: #666;
-}
+
 
 /* SOBRE O PROJETO */
 .sobre {
@@ -256,7 +280,6 @@ section h2 {
 }
 
 .sobre-texto p {
-  color: #666;
   line-height: 1.6;
 }
 
@@ -264,11 +287,11 @@ section h2 {
   display: inline-block;
   margin-top: 15px;
   background-color: var(--verde);
-  color: white;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   transition: 0.3s;
+  color: var(--fundo-claro);
 }
 
 .sobre-texto a:hover {
@@ -279,24 +302,11 @@ section h2 {
 footer {
   text-align: center;
   padding: 20px;
-  border-top: 1px solid #ccc;
-  color: #777;
+  border-top: 1px solid;
 }
 
-/* DARK MODE */
-body.dark-mode .navbar {
-  background-color: #2b2b2b;
-}
 
 body.dark-mode .card {
   background-color: #2f2f2f;
   color: var(--texto-claro);
-}
-
-body.dark-mode .navbar ul li a {
-  color: #9ae6b4;
-}
-
-body.dark-mode .sobre-texto p {
-  color: #ddd;
 }
