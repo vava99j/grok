@@ -204,20 +204,7 @@
 
 <body>
 
-  <nav class="navbar">
-    <a href="/home">
-      <img src="img/icon.png" alt="Logo">
-    </a>
-    <ul>
-      <li><a href="/home">Home</a></li>
-      <li><a href="/sobre">Sobre Nós</a></li>
-      <li><a href="/infos">Infos Técnicas</a></li>
-    </ul>
-    <div class="buttons">
-      <button id="modeToggle">🌙</button>
-      <a href="/contato" class="btn">Contacte-nos</a>
-    </div>
-  </nav>
+  <meu-widget></meu-widget>
 
 
   <section>
@@ -244,38 +231,7 @@
   <button type="submit">Enviar Mensagem 💌</button>
 </form>
 
-<script>
-document.getElementById("contatoForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const nome = document.getElementById("nome").value;
-  const email = document.getElementById("email").value;
-  const mensagem = document.getElementById("mensagem").value;
-
-  try {
-    const resposta = await fetch("/enviar", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ nome, email, mensagem })
-    });
-
-    const texto = await resposta.text();
-    alert(texto);
-  } catch (err) {
-    alert("Erro ao enviar mensagem 😢");
-    console.error(err);
-  }
-});
-
-    const toggleBtn = document.getElementById("modeToggle");
-    const body = document.body;
-
-    toggleBtn.addEventListener("click", () => {
-      body.classList.toggle("dark-mode");
-      body.classList.toggle("light-mode");
-      toggleBtn.textContent = body.classList.contains("dark-mode") ? "🌞" : "🌙";
-    });
-  </script>
+    <script type="module" src="navbar.js"></script>
 
 </body>
 

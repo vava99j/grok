@@ -10,20 +10,8 @@
 </head>
 
 <body class="light-mode">
-  <nav class="navbar">
-    <a href="/home">
-      <img src="img/icon.png" alt="Logo">
-    </a>
-    <ul>
-      <li><a href="/home">Home</a></li>
-      <li><a href="/sobre">Sobre Nós</a></li>
-      <li><a href="/infos">Infos Técnicas</a></li>
-    </ul>
-    <div class="buttons">
-      <button id="modeToggle">🌙</button>
-      <a href="/contato" class="btn">Contacte-nos</a>
-    </div>
-  </nav>
+ 
+  <meu-widget></meu-widget>
   <!-- CABEÇALHO -->
   <header>
     <h1>Sobre a Tec-Hor 🌿</h1>
@@ -86,15 +74,7 @@
   </footer>
 
   <!-- Script modo escuro -->
-  <script>
-    const toggleBtn = document.getElementById("modeToggle");
-    const body = document.body;
-
-    toggleBtn.addEventListener("click", () => {
-      body.classList.toggle("dark-mode");
-      body.classList.toggle("light-mode");
-      toggleBtn.textContent = body.classList.contains("dark-mode") ? "🌞" : "🌙";
-    });
-  </script>
+ 
+    <script type="module" src="navbar.js"></script>
 </body>
 </html>

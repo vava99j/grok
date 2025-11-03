@@ -13,27 +13,9 @@
 
 <body class="light-mode">
   <!-- NAVBAR -->
-   
-  <div class="navbar">
-    <a href="/home" class="logo">
-      <img src="img/icon.png" alt="Logo">
-    </a>
-
-    <ul id="menu" hidden>
-      <li><a href="/home">Home</a></li>
-      <li><a href="/sobre">Sobre Nós</a></li>
-      <li><a href="/infos">Infos Técnicas</a></li>
-   
-
-    <div class="buttons">
-      <button id="modeToggle">🌙</button>
-      <a href="/contato" class="btn">Contacte-nos</a>
-    </div>
-     </ul>
-      <button class="menu-btn" onclick="document.getElementById('menu').hidden ^= 1">☰</button>
-
-   
-  </div>
+ 
+  <meu-widget></meu-widget>
+  
 
   <!-- CABEÇALHO -->
   <header>
@@ -86,17 +68,7 @@
     <p>© 2025 Tec-Hor | Todos os direitos reservados 💚</p>
   </footer>
 
-  <!-- Script modo escuro -->
-  <script>
-    const toggleBtn = document.getElementById("modeToggle");
-    const body = document.body;
-
-    toggleBtn.addEventListener("click", () => {
-      body.classList.toggle("dark-mode");
-      body.classList.toggle("light-mode");
-      toggleBtn.textContent = body.classList.contains("dark-mode") ? "🌞" : "🌙";
-    });
-  </script>
+    <script type="module" src="navbar.js"></script>
 </body>
 
 </html>

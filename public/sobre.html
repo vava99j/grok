@@ -8,23 +8,7 @@
   <link rel="shortcut icon" href="assets/images/47b3204c-f074-4262-87dc-d95bf20c03d6-removebg-preview-1.png" type="image/x-icon"/>
   <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="light-mode">
-  <nav class="navbar">
-    <a href="/home">
-      <img src="img/icon.png" alt="Logo">
-    </a>
-    <ul>
-      <li><a href="/home">Home</a></li>
-      <li><a href="/sobre">Sobre Nós</a></li>
-      <li><a href="/infos">Infos Técnicas</a></li>
-    </ul>
-    <div class="buttons">
-      <button id="modeToggle">🌙</button>
-      <a href="/contato" class="btn">Contacte-nos</a>
-    </div>
-  </nav>
-
+  <meu-widget></meu-widget>
   <!-- CABEÇALHO -->
   <header>
     <h1>Sobre Nós</h1>
@@ -77,16 +61,7 @@
     <p>© 2025 Tec-Hor | Todos os direitos reservados 💚</p>
   </footer>
 
-  <!-- Script modo escuro -->
-  <script>
-    const toggleBtn = document.getElementById("modeToggle");
-    const body = document.body;
 
-    toggleBtn.addEventListener("click", () => {
-      body.classList.toggle("dark-mode");
-      body.classList.toggle("light-mode");
-      toggleBtn.textContent = body.classList.contains("dark-mode") ? "🌞" : "🌙";
-    });
-  </script>
+    <script type="module" src="navbar.js"></script>
 </body>
 </html>
