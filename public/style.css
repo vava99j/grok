@@ -9,6 +9,21 @@
   .logo img {
     height: 50px;
   }
+
+  body.light-mode,
+  body.dark-mode {
+    background-color: var(--fundo);
+    color: var(--texto);
+    transition: 0.4s;
+    display: block;
+    /* ou flex se realmente precisar, mas cuidado */
+    max-width: 100%;
+    /* garante que não extrapole a tela */
+    margin: 0 auto;
+    /* centraliza */
+    text-align: center;
+    justify-items: center;
+  }
 }
 
 
@@ -33,7 +48,7 @@
 .light-mode {
   --fundo: white;
   --texto: grey;
- --navbar: rgb(228, 228, 228);
+  --navbar: rgb(228, 228, 228);
 }
 
 .dark-mode {
@@ -49,7 +64,7 @@ body.dark-mode {
   transition: 0.4s;
   display: block;
   /* ou flex se realmente precisar, mas cuidado */
-  max-width: 100%;
+  max-width: 90%;
   /* garante que não extrapole a tela */
   margin: 0 auto;
   /* centraliza */
@@ -70,8 +85,8 @@ body.dark-mode {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  background-color: rgba(245, 245, 245 , 0.2);
+  width: 90%;
+  background-color: rgba(245, 245, 245, 0.2);
 }
 
 #navbarrow {
@@ -96,11 +111,9 @@ body.dark-mode {
   opacity: 1;
   padding: 24px;
   width: 100%;
-  background: linear-gradient(
-      to top,          
-       rgba(245, 245, 245 , 0.9) 10%,     
-       rgba(245, 245, 245 , 0.5) 100%       
-    );
+  background: linear-gradient(to top,
+      rgba(245, 245, 245, 0.9) 10%,
+      rgba(245, 245, 245, 0.5) 100%);
 }
 
 
@@ -130,7 +143,7 @@ body.dark-mode {
 
 .navbar img {
   height: 60px;
-  filter: brightness(200%)  contrast(100%);
+  filter: brightness(200%) contrast(100%);
 }
 
 .navbar ul {
@@ -182,6 +195,7 @@ body.dark-mode {
 /* CABEÇALHO */
 header {
   text-align: center;
+  padding-bottom: 15%;
 }
 
 header h1 {
