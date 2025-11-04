@@ -283,21 +283,8 @@ section h2 {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
-.sobre-texto {
-  max-width: 500px;
-  text-align: left;
-}
 
-.sobre-texto h2 {
-  color: var(--verde);
-  margin-bottom: 20px;
-}
-
-.sobre-texto p {
-  line-height: 1.6;
-}
-
-.sobre-texto a {
+.sobre-missao a {
   display: inline-block;
   margin-top: 15px;
   background-color: var(--verde);
@@ -308,7 +295,7 @@ section h2 {
   color: var(--fundo-claro);
 }
 
-.sobre-texto a:hover {
+.sobre-missao a:hover {
   background-color: #1e7e34;
 }
 

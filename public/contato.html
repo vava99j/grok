@@ -42,12 +42,6 @@
       padding: 8rem 2rem 4rem;
     }
 
-    section h1 {
-      font-family: "Dela Gothic One", cursive;
-      color: #2b7a0b;
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
 
     section p {
       color: #555;
@@ -159,13 +153,11 @@
 <body>
 
   <nav-bar></nav-bar>
+<header>
+    <h1> <br>Entre em Contato 💬</h1>
+</header>
 
-
-  <section>
-    <h1>Entre em Contato 💬</h1>
-    <p>Escolha como deseja falar conosco ou envie uma mensagem diretamente:</p>
-
-    <div class="botoes">
+    <div class="btn">
       <a class="btn btn-outline-success m-2" href="mailto:svagnerjorge2@gmail.com">📧 Enviar Email</a>
       <a class="btn btn-outline-success m-2"
         href="https://wa.me/5511978315772?text=Olá! Gostaria de saber mais sobre o Tec-Hor.">💬 Enviar WhatsApp</a>
@@ -173,6 +165,9 @@
 
 
   <form id="contatoForm">
+    
+    <label>Escolha como deseja falar conosco ou envie uma mensagem diretamente: <br><br></label>
+
   <label for="nome">Nome:</label>
   <input type="text" id="nome" required>
 
